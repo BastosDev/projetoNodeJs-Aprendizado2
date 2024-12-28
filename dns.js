@@ -1,40 +1,16 @@
-const rl = require("node:readline")
 const dns = require("node:dns")
+const urlSearch = "google.com"
 
+async function bootstrap() {
 
-const prompt = rl.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
+    console.time("Pesquisando url por DNS padrão")
 
-const promptPromises = {
-    question: (pergunta) => new Promise((resolve, reject) => {
-        try {
-            prompt.question((pergunta), (resposta) => resolve(resposta))
-        } catch (error) {
-            reject(error)
-        }
-    }),
+    const addresses = await dns.promises.resolve4(urlSearch)
+    console.timeEnd("Pesquisando url por DNS padrão")
+    console.log(addresses)
 
-    close: () => prompt.close()
+    const nameServers = await dns.promises.resolveNs(urlSearch)
+    console.log(nameServers)
 }
 
-async function askUsers () {
-    
-    const urlSearch = await promptPromises.question("Qual o dns? ")    
-
-    async function bootstrap() {
-        const addresses = await dns.promises.resolve4(urlSearch)
-        console.log(addresses)
-    
-        const nameServers = await dns.promises.resolveNs(urlSearch)
-        console.log(nameServers)
-    }
-
-    const result = await bootstrap()
-    console.log(bootstrap)
-
-    prompt.close()
-}
-
-askUsers()
+bootstrap()

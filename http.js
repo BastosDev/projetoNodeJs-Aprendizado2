@@ -1,17 +1,17 @@
 const http = require("node:http")
-const port = 6000
 
 const server = http.createServer((request, response) => {
     const { method, statusCode, url } = request
 
     if (url === "/") {
-        return response.write("Hello from node")
+        response.write("Hello from node")
+        response.end()
     }
 })
 
 
-server.listen(port, "localhost", () => {
+server.listen(3000, "localhost", () => {
 
-    console.log(`server running on https://localhost:/${port}`)
+    console.log(`server running on http://localhost:/3000`)
 
 })

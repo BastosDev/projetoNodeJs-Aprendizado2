@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "mon": "^0.0.8",
+    "node": "^23.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

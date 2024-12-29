@@ -1,5 +1,5 @@
 # Sobre a Aula
-
+- Navegar pela documentação oficial do node
 ## Imporatremos o DNS do nodeJS
 - cria uma var const dns = require("node:dns")
 - adiciona uma var para detectar o dns
@@ -37,4 +37,6 @@
             - puxamos o resultado do ip buscado com resolve
     })
 }
-    
+
+
+## Http no nodeJS

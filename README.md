@@ -2,6 +2,10 @@
 - Navegar pela documentação oficial do node
 - npm i -D nodemon para baixar o pacote onde nos permite ver as alterações no codigo sem necessariamente ficar parando o servidor
 - npx nodemon "file" para executar o script
+
+- npm docs luxon 
+    - para acessar a biblioteca do luxon
+
 ## Imporatremos o DNS do nodeJS
 - cria uma var const dns = require("node:dns")
 - adiciona uma var para detectar o dns
@@ -42,3 +46,17 @@
 
 
 ## Http no nodeJS
+- Definir const http = require("node:http") para importar a biblioteca http do node
+- Definimos uma const sports para definirmos quais esportes queremos mostrar na página
+- Definimos uma const { resourceUsage } = require("node:process") para puxar o process da biblioteca node
+- Definimos uma const server = http.createServer... para criar uma hospedagem local atraves de uma const - - - bodyPromises e um let body de forma assincrona
+    - Utilizamos o if para se a url possuir apenas "/", direcionar para um http escrite : Hello from node http server
+    - Abrimos um if para se a url possuir /api/sports ela definir outro if
+        - No primeiro if, analisa se method é GET ou POST, caso seja GET, ele transforma a const sports em uma string JSON
+        - No segundo if, se method === POST
+            - Definimos uma const body de forma async, ou seja, com await
+            - Definimos uma const { name }  = body de forma que seja um object
+            - Dentro deste if colocamos outro para que sports seja questionado antes de sofrer uma alteração no poste
+        - Finalizamos com respose write para escrever o name(object de sports) em letra minuscula e demos um response end e depois return
+    - Terminamos o primeiro if com respose statusCode como 404, caso dê erro e caso dê erro ele retorna uma string que o correto seria um http com mensagem de erro e finalizamos com um response end
+- Abrimos um server listen para definir a porta(3000) e o localhost, abrimos uma arrow function para determinar o console log como o site localhost para se ele iniciar, retornar a mensagem no console

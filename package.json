@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "luxon": "^3.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

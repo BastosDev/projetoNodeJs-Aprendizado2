@@ -1,6 +1,7 @@
 # Sobre a Aula
 - Navegar pela documentação oficial do node
-- npm i node mon para baixar o pacote onde nos permite ver as alterações no codigo sem necessariamente ficar parando o servidor
+- npm i -D nodemon para baixar o pacote onde nos permite ver as alterações no codigo sem necessariamente ficar parando o servidor
+- npx nodemon "file" para executar o script
 ## Imporatremos o DNS do nodeJS
 - cria uma var const dns = require("node:dns")
 - adiciona uma var para detectar o dns
